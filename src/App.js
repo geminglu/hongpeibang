@@ -1,8 +1,8 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom'
 import Error from './views/Error'
-import Index from './views/Home/Index'
-
+import Index from './views/Home/Index';
+import './style/app.css'
 
 function App() {
     return (

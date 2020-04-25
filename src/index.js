@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom'
-// import Button from 'react-bootstrap';
 import App from './App';
 
 ReactDOM.render(
