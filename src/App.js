@@ -3,6 +3,8 @@ import {Switch, Route} from 'react-router-dom'
 import Error from './views/Error'
 import Index from './views/Home/Index';
 import './style/app.css'
+import { connect } from 'react-redux'
+import { addGoods } from './store/actioin/goods'
 
 function App() {
     return (
@@ -15,4 +17,4 @@ function App() {
     );
 }
 
-export default App;
+export default connect(state => ({state: state}), {addGoods})(App)
