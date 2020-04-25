@@ -1,0 +1,48 @@
+$butback: #3399CC;
+$butback1: #99CC33;
+
+.index {
+    margin: 0 auto;
+    margin-top: 140px;
+    max-width: 580px;
+    text-align: center;
+}
+
+.imdex_img {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button div {
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    color: white;
+    font: 500 18px/50px "";
+    cursor: pointer;
+    user-select: none;
+}
+.button_home{
+    background: $butback;
+}
+.button_go{
+    background: $butback1;
+}
+.button_home:hover {
+    background: darken($butback, 2% )
+}
+.button_go:hover {
+    background: darken($butback1, 2% )
+}
+.button_home:active {
+    background: darken($butback, 5% )
+}
+.button_go:active {
+    background: darken($butback1, 5% )
+}
