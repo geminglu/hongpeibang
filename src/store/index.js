@@ -13,6 +13,4 @@ const store = createStore(rootReducer, compose(
     window.__REDUX_DEVTOOLS_EXTENSION__()&&window.__REDUX_DEVTOOLS_EXTENSION__()    // 调试工具
 ))
 
-// const store = createStore(rootReducer, applyMiddleware(thunk));
-
 export default store
