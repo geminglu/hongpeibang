@@ -2,7 +2,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware'); //需�
 module.exports = function(app) {
     app.use(
         createProxyMiddleware('/api',{
-            target: 'https://geminglu.cn:3001', // 要代理的地址
+            target: 'https://geminglu.cn', // 要代理的地址
             changeOrigin: true, // 开启代理
         })
     );

@@ -1,5 +1,5 @@
 //范围随机数（正整数）
-import axios from "axios";
+import { get, post } from "../../api"
 
 function random(max, min) {
     return (Math.round(Math.random() * (max - min) + min));
@@ -19,9 +19,11 @@ export function addGoods(name, price) {
 //异步的action
 export function getGoods() {
     return dispatch => {
-        axios("/api/www").then(({data}) => {
-            dispatch(addGoods(data.name, data.price))   // 调用同步action方法
-        })
+        console.log(get)
+        get("/api/www").then(res=>console.log(res))
+        // axios("/api/www").then(({data}) => {
+        //     dispatch(addGoods(data.name, data.price))   // 调用同步action方法
+        // })
 
     }
 
