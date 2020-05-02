@@ -1,0 +1,34 @@
+.newup {
+  margin-top: 44px;
+  ul {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    li {
+      img {
+        width: 150px;
+        height: 85.5px;
+      }
+    }
+  }
+}
+.newin {
+  ul {
+    display: flex;
+    padding-left: 7px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    li {
+      font-size: 15px;
+      line-height: 21px;
+      text-align: center;
+      padding: 7px 10px;
+      white-space: nowrap;
+      background: #0000ff;
+      color: #ffffff;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+  }
+}
