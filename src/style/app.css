@@ -10,7 +10,8 @@ table {
 }
 
 fieldset, img {
-    border: 0
+    border: 0;
+    vertical-align: middle;
 }
 
 address, caption, cite, code, dfn, em, strong, th, var {
@@ -55,4 +56,7 @@ body {
     max-width: 600px;
     margin: 0 auto;
     background: white;
+}
+::-webkit-scrollbar{
+    display:none;
 }

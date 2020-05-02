@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import ask from '../../style/home/ask.module.scss'
-export default class Ask extends Component {
+import ask from '../../../style/home/ask.module.scss'
+export default class Ask_new extends Component {
     render() {
         return (
             <div className={ask.ask}>
