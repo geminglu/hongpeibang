@@ -4,7 +4,6 @@ export default class Ask_new extends Component {
     render() {
         return (
             <div className={ask.main}>
-                最新
                 <div className={ask.article}>
                     <a href="#">标题标题标题标题标题标题标题标题标题</a>
                     <div className={ask.content}>

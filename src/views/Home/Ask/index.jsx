@@ -5,29 +5,51 @@ import {NavLink, Redirect, Route, Switch} from "react-router-dom";
 import AskQuintessence from "./Ask_quintessence";
 import Ask_new from "./Ask_new";
 import AskHot from "./Ask_hot";
+import Topnav from "../../../components/Topnav";
+
 class Ask extends Component {
     render() {
         return (
             <div>
                 <div className={style.top}>
-                    头部
-                </div>
-                <div className={style.nav}>
-                    <NavLink className={style.nav1} activeClassName={style.active} to={'/ask/essence'}>
-                        <span>精华问答</span>
-                        <div className={style.line}>
+                    <Topnav>
+                        <div position="top_left">
+                            <span className={ask.questions}>提问</span>
                         </div>
-                    </NavLink>
-                    <NavLink className={style.nav1} activeClassName={style.active} exact to={'/ask'}>
-                        <span>最新问题</span>
-                        <div className={ask.line}>
+                        <div position="top_conent">
+                            <div className={ask.search}>
+                                <div className={ask.input}>
+                                    <span>搜索问题</span>
+                                </div>
+                            </div>
                         </div>
-                    </NavLink>
-                    <NavLink className={style.nav1} activeClassName={style.active} to={'/ask/hot'}>
-                        <span>最热问题</span>
-                        <div className={ask.line}>
+                        <div position="top_rigth">
+                            <span className={ask.answers}>
+                                <img
+                                    src={require('../../../images/question.png')}
+                                    alt=""/>
+                            </span>
                         </div>
-                    </NavLink>
+                        <div position="button">
+                            <div className={style.nav}>
+                                <NavLink className={style.nav1} activeClassName={style.active} to={'/ask/essence'}>
+                                    <span>精华问答</span>
+                                    <div className={style.line}>
+                                    </div>
+                                </NavLink>
+                                <NavLink className={style.nav1} activeClassName={style.active} exact to={'/ask'}>
+                                    <span>最新问题</span>
+                                    <div className={ask.line}>
+                                    </div>
+                                </NavLink>
+                                <NavLink className={style.nav1} activeClassName={style.active} to={'/ask/hot'}>
+                                    <span>最热问题</span>
+                                    <div className={ask.line}>
+                                    </div>
+                                </NavLink>
+                            </div>
+                        </div>
+                    </Topnav>
                 </div>
                 <div>
                     <Switch>

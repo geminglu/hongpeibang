@@ -1,6 +1,6 @@
 .top {
   overflow: hidden;
-  height: 44px;
+  height: 90px;
   padding: 0 18px;
 
   .questions {
@@ -32,8 +32,9 @@
   }
 
   .search {
+    width: 464px;
     height: 35px;
-    margin: 4.5px 50px;
+    margin: 4.5px auto;
 
     .input {
       height: 100%;
@@ -53,43 +54,51 @@
       }
     }
   }
-}
-
-.nav {
-  height: 44px;
-  display: flex;
-
-  .nav1 {
-    margin: 8px 0;
-    flex: 1;
-    position: relative;
+  .nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 6;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 0;
+    margin: 0 auto;
+    overflow: hidden;
     text-align: center;
-    cursor: pointer;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 65px;
-    line-height: 28px;
-    height: 30px;
-    font-size: 14px;
-    color: #999999;
+    display: flex;
+    .nav1 {
+      margin: 8px 0;
+      flex: 1;
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 65px;
+      line-height: 28px;
+      height: 30px;
+      font-size: 14px;
+      color: #999999;
 
-    .line {
-      display: none;
+      .line {
+        display: none;
+      }
     }
-  }
 
-  .active {
-    color: #4A4945;
-    font-weight: bold;
+    .active {
+      color: #4A4945;
+      font-weight: bold;
 
-    .line {
-      width: 50px;
-      display: block;
-      height: 2px;
-      margin: 0 auto;
-      border-radius: 20px;
-      background-color: #E98B71;
+      .line {
+        width: 50px;
+        display: block;
+        height: 2px;
+        margin: 0 auto;
+        border-radius: 20px;
+        background-color: #E98B71;
+      }
     }
+
   }
 }
 

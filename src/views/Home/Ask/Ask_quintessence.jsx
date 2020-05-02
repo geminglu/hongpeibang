@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import style from '../../../style/home/ask.module.scss'
-
 class AskQuintessence extends Component {
     render() {
         return (
             <div className={style.main}>
-                精华
                 <div className={style.article2}>
                     <div className={style.author_pic}>
                         <div className={style.author_img}>
