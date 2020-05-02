@@ -1,0 +1,30 @@
+.warp{
+  padding: 0 18px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  box-sizing: border-box;
+}
+.top{
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .top_left{
+
+  }
+  .top_right{
+
+  }
+  .top_conent{
+
+
+  }
+}
+.button{
+  text-align: center;
+}

@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
-import style from '../../../style/home/home.module.scss'
+import style from '../../../style/home/stu/home.module.scss'
+import Topnav from '../../../components/Topnav'
 
 class Stu extends Component {
     render() {
         return (
             <div>
-                <div className={style.top}>顶部</div>
+                <Topnav>
+                    <div position="top_left">左</div>
+                    <div position="top_rigth">右</div>
+                    <div position="top_conent">中</div>
+                </Topnav>
                 <div className={style.nav}>
                     <ul>
                         <li>
@@ -28,51 +33,6 @@ class Stu extends Component {
                 </div>
                 <div className={style.conent}>
                     <ul>
-                        <li>
-                            <h2>推荐课程</h2>
-                            <ul>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                            </ul>
-                        </li>
                         <li>
                             <h2>推荐课程</h2>
                             <ul>

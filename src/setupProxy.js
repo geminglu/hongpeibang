@@ -6,4 +6,13 @@ module.exports = function(app) {
             changeOrigin: true, // 开启代理
         })
     );
+    app.use(
+        createProxyMiddleware('/hpb',{
+            target: 'https://api.hongbeibang.com', // 要代理的地址
+            changeOrigin: true, // 开启代理
+            pathRewrite:{
+                "^/hpb":""
+            }
+        })
+    );
 };
