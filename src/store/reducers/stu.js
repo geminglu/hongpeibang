@@ -1,22 +1,20 @@
-// 商品模块
+import {GETSTU,GETCOMMEND} from "../actioinType";
+
 const initState = {
-    goodsLIst: [
-        {
-            goodsID: 242342342,
-            name: "西瓜",
-            price: 12
-        }
-    ]
+    nav:[],
+    commend:[]
 }
 
-function goods(state = initState, action) {
+function stu(state = initState, action) {
     state = JSON.parse(JSON.stringify(state));
     switch (action.type) {
-        case "ADD_GOODS":
-            state.goodsLIst.push(action.payload)
+        case GETSTU:    // 导航栏
+            state.nav = action.payload.item
             break;
+        case GETCOMMEND:    // 推荐课程
+            state.commend = action.payload.item
     }
     return state
 }
 
-export default goods
+export default stu

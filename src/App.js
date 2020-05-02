@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom'
 import Error from './views/Error'
 import Home from './views/Home/Index';
 import { connect } from 'react-redux'
-import { addGoods } from './store/actioin/goods'
+import { getstu } from './store/actioin/stu'
 
 function App() {
     return (
@@ -16,4 +16,4 @@ function App() {
     );
 }
 
-export default connect(state => ({state: state}), {addGoods})(App)
+export default connect(state => ({state: state}), {getstu})(App)

@@ -1,0 +1,2 @@
+exports.GETSTU = "GETSTU";
+exports.GETCOMMEND = "GETCOMMEND"

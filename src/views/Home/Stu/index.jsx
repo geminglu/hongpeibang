@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import style from '../../../style/home/stu/home.module.scss'
 import Topnav from '../../../components/Topnav'
+import {connect} from 'react-redux'
+import {getstu, getcommend} from '../../../store/actioin/stu'
 
 class Stu extends Component {
     render() {
@@ -13,22 +15,14 @@ class Stu extends Component {
                 </Topnav>
                 <div className={style.nav}>
                     <ul>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
+                        {this.props.state.stu.nav.map((item, index) => {
+                            return (
+                                <li key={item.categoryItemId}>
+                                    <img src={item.image}/>
+                                    <span>{item.title}</span>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
                 <div className={style.conent}>
@@ -36,46 +30,17 @@ class Stu extends Component {
                         <li>
                             <h2>推荐课程</h2>
                             <ul>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
+                                {this.props.state.stu.commend.map((item, index) => {
+                                    return (
+                                        <li key={item.courseId}>
+                                            <div className={style.img_span}>
+                                                <img src={item.coverImage}/>
+                                                <span>{item.buyNum>"1000"?"1000+":item.buyNum}在学</span>
+                                            </div>
+                                            <h3>{item.coverTitle}</h3>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </li>
                     </ul>
@@ -83,6 +48,12 @@ class Stu extends Component {
             </div>
         );
     }
+
+    componentWillMount() {
+        this.props.getstu()
+        this.props.getcommend()
+
+    }
 }
 
-export default Stu;
+export default connect(state => ({state: state}), {getstu, getcommend})(Stu)
