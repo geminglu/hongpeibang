@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import style from '../../../style/home/stu/home.module.scss'
 import Topnav from '../../../components/Topnav'
 import {connect} from 'react-redux'
-import {getstu, getcommend} from '../../../store/actioin/stu'
+import {getstu, getcommend, getcourse} from '../../../store/actioin/stu'
 
 class Stu extends Component {
     render() {
@@ -35,7 +35,7 @@ class Stu extends Component {
                                         <li key={item.courseId}>
                                             <div className={style.img_span}>
                                                 <img src={item.coverImage}/>
-                                                <span>{item.buyNum>"1000"?"1000+":item.buyNum}在学</span>
+                                                <span>{item.buyNum > "1000" ? "1000+" : item.buyNum}在学</span>
                                             </div>
                                             <h3>{item.coverTitle}</h3>
                                         </li>
@@ -43,6 +43,27 @@ class Stu extends Component {
                                 })}
                             </ul>
                         </li>
+                        {this.props.state.stu.cetcommend.map((item, index) => {
+                            console.log(item)
+                            return (
+                                <li key={item.categoryId}>
+                                    <h2>{item.title}</h2>
+                                    <ul>
+                                        {item.item.map((item, index) => {
+                                            return (
+                                                <li key={item.categoryItemId} title={item.shareDescription}>
+                                                    <div className={style.img_span}>
+                                                        <img src={item.image}/>
+                                                        <span>{item.buyNum > "1000" ? "1000+" : item.buyNum}在学</span>
+                                                    </div>
+                                                    <h3>{item.shareTitle}</h3>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
             </div>
@@ -52,8 +73,9 @@ class Stu extends Component {
     componentWillMount() {
         this.props.getstu()
         this.props.getcommend()
+        this.props.getcourse()
 
     }
 }
 
-export default connect(state => ({state: state}), {getstu, getcommend})(Stu)
+export default connect(state => ({state: state}), {getstu, getcommend, getcourse})(Stu)

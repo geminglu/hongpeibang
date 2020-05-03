@@ -1,8 +1,9 @@
-import {GETSTU,GETCOMMEND} from "../actioinType";
+import {GETSTU, GETCOMMEND, COURSE} from "../actioinType";
 
 const initState = {
-    nav:[],
-    commend:[]
+    nav: [],
+    commend: [],
+    cetcommend: []
 }
 
 function stu(state = initState, action) {
@@ -11,8 +12,13 @@ function stu(state = initState, action) {
         case GETSTU:    // 导航栏
             state.nav = action.payload.item
             break;
-        case GETCOMMEND:    // 推荐课程
+        case COURSE:    // 推荐课程
             state.commend = action.payload.item
+            break;
+        case GETCOMMEND:
+            action.payload.item.splice(0, 1)
+            state.cetcommend = action.payload.item
+            break;
     }
     return state
 }
