@@ -1,0 +1,3 @@
+exports.GETSTU = "GETSTU";
+exports.GETCOMMEND = "GETCOMMEND"
+exports.COURSE = "COURSE"
