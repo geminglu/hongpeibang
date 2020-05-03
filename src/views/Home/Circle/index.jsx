@@ -11,8 +11,8 @@ class Circle extends Component {
       <div>
         <Topnav>
           <div position="top_left">左</div>
-          <div position="top_rigth">右</div>
-          <div position="top_conent">中</div>
+          <div position="top_right">右</div>
+          <div position="top_center">中</div>
         </Topnav>
         <Route path={"/circle"} component={New}></Route>
       </div>
