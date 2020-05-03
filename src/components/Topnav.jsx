@@ -31,7 +31,9 @@ class Topnav extends Component {
                     <div className={style.top_conent}>{top_conent}</div>
                     <div className={style.top_right}>{top_rigth}</div>
                 </div>
-                <div className={style.button}>{button}</div>
+                {/*判断button是否为空如果是空的话就不用渲染了*/}
+                {!button? null:<div className={style.button}>{button}</div>}
+
             </div>
         )
     }
