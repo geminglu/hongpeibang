@@ -47,7 +47,7 @@ class Home extends Component {
                     <Route path={"/circle"} exact component={Circle}></Route>
                     <Route path={"/ask"}  component={Ask}></Route>
                     <Route path={"/circle"}  component={Circle}></Route>
-                    <Redirect to={{pathname: "/error" + this.props.location.pathname}}/>
+                    {/*<Redirect to={{pathname: "/error" + this.props.location.pathname}}/>*/}
                 </Switch>
             </div>
         );

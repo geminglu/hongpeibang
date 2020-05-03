@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import style from '../../../style/home/stu/home.module.scss'
 import Topnav from '../../../components/Topnav'
 import {connect} from 'react-redux'
+import {NavLink} from "react-router-dom";
 import {getstu, getcommend, getcourse} from '../../../store/actioin/stu'
 
 class Stu extends Component {
@@ -16,11 +17,15 @@ class Stu extends Component {
                 <div className={style.nav}>
                     <ul>
                         {this.props.state.stu.nav.map((item, index) => {
+                            let legth = item.link.split("/");
+                            let path = legth[legth.length-1];
                             return (
-                                <li key={item.categoryItemId}>
-                                    <img src={item.image}/>
-                                    <span>{item.title}</span>
-                                </li>
+                                <NavLink to={"/"+path} key={item.categoryItemId}>
+                                    <li>
+                                        <img src={item.image}/>
+                                        <span>{item.title}</span>
+                                    </li>
+                                </NavLink>
                             )
                         })}
                     </ul>
@@ -44,7 +49,6 @@ class Stu extends Component {
                             </ul>
                         </li>
                         {this.props.state.stu.cetcommend.map((item, index) => {
-                            console.log(item)
                             return (
                                 <li key={item.categoryId}>
                                     <h2>{item.title}</h2>
