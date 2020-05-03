@@ -1,125 +1,288 @@
-.ask{
-  img{
-    border: 0;
-  }
-  padding: 0;
-  margin: 0 auto;
+.top {
   overflow: hidden;
-  .title{
-    background: #fff;
-    height: 90px;
-    z-index: 6;
-    max-width: 600px;
+  height: 90px;
+  padding: 0 18px;
+
+  .questions {
+    float: left;
+    color: #E98B71;
+    margin: 7px 0;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .answers {
+    float: right;
+    font-size: 0;
+    height: 44px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+
+    img {
+      width: 27px;
+      height: 27px;
+      margin: 9.5px 0;
+    }
+  }
+
+  .search {
+    width: 464px;
+    height: 35px;
+    margin: 4.5px auto;
+
+    .input {
+      height: 100%;
+      margin: 0 auto;
+      border-radius: 4px;
+      background-color: #F5F7F9;
+      box-sizing: border-box;
+      padding: 0 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        color: #4A4945;
+        font-size: 14px;
+      }
+    }
+  }
+  .nav {
     position: fixed;
-    top: 0;
     left: 0;
     right: 0;
+    z-index: 6;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 0;
     margin: 0 auto;
-    box-sizing: border-box;
-    .title_t{
-      overflow: hidden;
-      height: 44px;
-      padding: 0 18px;
-      .questions{
-        float: left;
-        color: #E98B71;
-        margin: 7px 0;
-        position: relative;
-        z-index: 1;
-        cursor: pointer;
-        font-size: 16px;
-        line-height: 30px;
-      }
-      .answers{
-        float: right;
-        font-size: 0;
-        height: 44px;
-        display: inline-block;
-        cursor: pointer;
-        text-align: center;
-        position: relative;
-        z-index: 1;
-        img{
-          width: 27px;
-          height: 27px;
-          margin: 9.5px 0;
-        }
-      }
-      .search{
-        height: 35px;
-        margin: 4.5px 50px;
-        .input{
-          height: 100%;
-          margin: 0 auto;
-          border-radius: 4px;
-          background-color: #F5F7F9;
-          box-sizing: border-box;
-          padding: 0 10px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          span{
-            color: #4A4945;
-            font-size: 14px;
-          }
-        }
-      }
-    }
-    .title_b{
-      height: 44px;
-      display: flex;
-      .nav{
-        margin: 8px 0;
-        flex: 1;
-        position: relative;
-        text-align: center;
-        cursor: pointer;
-        display: inline-block;
-        box-sizing: border-box;
-        width: 65px;
-        line-height: 28px;
-        height: 30px;
-        font-size: 14px;
-        color: #999999;
-        .line{
-          display: none;
-        }
-      }
-      .active{
-        color: #4A4945;
-        font-weight: bold;
-        .line{
-          width: 50px;
-          display: block;
-          height: 2px;
-          margin: 0 auto;
-          border-radius: 20px;
-          background-color: #E98B71;
-        }
-      }
-    }
-  }
-  .top{
-    height: 90px;
     overflow: hidden;
+    text-align: center;
+    display: flex;
+    .nav1 {
+      margin: 8px 0;
+      flex: 1;
+      position: relative;
+      text-align: center;
+      cursor: pointer;
+      display: inline-block;
+      box-sizing: border-box;
+      width: 65px;
+      line-height: 28px;
+      height: 30px;
+      font-size: 14px;
+      color: #999999;
+
+      .line {
+        display: none;
+      }
+    }
+
+    .active {
+      color: #4A4945;
+      font-weight: bold;
+
+      .line {
+        width: 50px;
+        display: block;
+        height: 2px;
+        margin: 0 auto;
+        border-radius: 20px;
+        background-color: #E98B71;
+      }
+    }
+
   }
-  .main{
+}
+
+.main {
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 15px;
+  background: #fff;
+
+  .article {
     position: relative;
     overflow: hidden;
+    border-bottom: 1px solid;
+    border-bottom-color: #E7E2E5;
+    margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 15px;
-    .article{
+    padding: 15px 0 10px 0;
+
+    a {
+      margin: 0 auto 5px auto;
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      color: #4A4945;
+      line-height: 25px;
+      max-height: 50px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .content {
       position: relative;
       overflow: hidden;
-      border-bottom: 1px solid;
-      border-bottom-color: #E7E2E5;
-      margin: 0 auto;
+      background-color: #F5F7F9;
       box-sizing: border-box;
-      padding: 15px 0 10px 0;
-      a{
-        margin: 0 auto 5px auto;
-        display: block;
+      border-radius: 4px;
+      display: flex;
+      margin-bottom: 10px;
+      margin-top: 10px;
+
+      img {
+        display: inline-flex;
+        border-radius: 4px;
+        background: none;
+        width: 70px;
+        height: 70px;
+      }
+
+      .cont {
+        display: inline-flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 15px;
+
+        .cont_title {
+          font-size: 14px;
+          color: #313131;
+          font-weight: bold;
+          text-align: justify;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+
+        .author {
+          margin-top: 5px;
+          font-size: 13px;
+          color: #999;
+          text-align: justify;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .the_answers {
+      overflow: hidden;
+      font-size: 14px;
+      line-height: 20px;
+      color: #999999;
+      box-sizing: border-box;
+    }
+
+    .none {
+      color: #498DD0;
+    }
+
+    .go_answers {
+      float: right;
+      margin-left: 6px;
+
+      .img {
+        width: 19px;
+        height: 19px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+
+        img {
+          width: 100%;
+          overflow: hidden;
+        }
+      }
+
+      .write {
+        font-size: 14px;
+        line-height: 20px;
+        vertical-align: middle;
+        display: inline-block;
+        color: #E98B71;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .article2 {
+    position: relative;
+    overflow: hidden;
+    zoom: 1;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid;
+    border-bottom-color: #E7E2E5;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px 0;
+
+    .author_pic {
+      float: left;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      margin-right: 10px;
+      .author_img{
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        img {
+          background: none;
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          overflow: hidden;
+          box-sizing: border-box;
+          border: 1px solid;
+          border-color: #E7E2E5;
+        }
+      }
+    }
+    .author{
+      overflow: hidden;
+      height: 40px;
+      margin-right: 0;
+      .expert{
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-right: 5px;
+        font-size: 0;
+        img{
+          width: 100%;
+          overflow: hidden;
+        }
+      }
+      .author_name{
+        font-size: 13px;
+        height: 40px;
+        line-height: 40px;
+        text-align: left;
+        color: #4A4945;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    a{
+      display: block;
+      margin: 10px auto;
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+      .problem{
         font-size: 18px;
         font-weight: bold;
         color: #4A4945;
@@ -128,79 +291,30 @@
         text-overflow: ellipsis;
         overflow: hidden;
       }
-      .content{
-        position: relative;
+      .answer{
+        font-size: 14px;
+        color: #4A4945;
+        line-height: 20px;
+        margin-top: 5px;
+        max-height: 60px;
+        text-overflow: ellipsis;
         overflow: hidden;
-        background-color: #F5F7F9;
-        box-sizing: border-box;
-        border-radius: 4px;
-        display: flex;
-        margin-bottom: 10px;
-        margin-top: 10px;
-        img{
-          display: inline-flex;
-          border-radius: 4px;
-          background: none;
-          width: 70px;
-          height: 70px;
-        }
-        .cont{
-          display: inline-flex;
-          flex: 1;
-          flex-direction: column;
-          justify-content: center;
-          margin-left: 15px;
-          .cont_title{
-            font-size: 14px;
-            color: #313131;
-            font-weight: bold;
-            text-align: justify;
-            text-overflow: ellipsis;
-            overflow: hidden;
-          }
-          .author{
-            margin-top: 5px;
-            font-size: 13px;
-            color: #999;
-            text-align: justify;
-            text-overflow: ellipsis;
-            overflow: hidden;
-          }
-        }
       }
-      .the_answers{
+      .commend{
         overflow: hidden;
         font-size: 14px;
         line-height: 20px;
         color: #999999;
-        box-sizing: border-box;
-      }
-      .none{
-        color: #498DD0;
-      }
-      .go_answers{
-        float: right;
-        margin-left: 6px;
-        .img{
-          width: 19px;
-          height: 19px;
-          display: inline-block;
-          vertical-align: middle;
-          margin-right: 5px;
-          img{
-            width: 100%;
-            overflow: hidden;
-          }
-        }
-        .write{
-          font-size: 14px;
-          line-height: 20px;
-          vertical-align: middle;
-          display: inline-block;
-          color: #E98B71;
-          cursor: pointer;
-        }
+        box-sizing: border-box
       }
     }
   }
+}
+
+.loading {
+  margin-top: 12px;
+  line-height: 30px;
+  font-size: 0;
+  color: #8d8d8d;
+  text-align: center;
 }

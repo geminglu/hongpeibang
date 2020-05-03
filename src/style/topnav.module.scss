@@ -8,6 +8,7 @@
   margin: 0 auto;
   background: white;
   box-sizing: border-box;
+  z-index: 6;
 }
 .top{
   height: 44px;
@@ -26,5 +27,6 @@
   }
 }
 .button{
-  text-align: center;
+  height: 46px;
+  overflow: hidden;
 }
