@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import style from '../../../style/home/ask.module.scss'
-import ask from "../../../style/home/ask.module.scss";
+import style from '../../../style/home/ask/ask.module.scss'
+import ask from "../../../style/home/ask/ask.module.scss";
 import {NavLink, Redirect, Route, Switch} from "react-router-dom";
 import AskQuintessence from "./Ask_quintessence";
 import Ask_new from "./Ask_new";

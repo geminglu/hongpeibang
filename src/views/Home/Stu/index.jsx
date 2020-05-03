@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import style from '../../../style/home/stu/home.module.scss'
 import Topnav from '../../../components/Topnav'
+import {connect} from 'react-redux'
+import {NavLink} from "react-router-dom";
+import {getstu, getcommend, getcourse} from '../../../store/actioin/stu'
 
 class Stu extends Component {
     render() {
@@ -13,22 +16,18 @@ class Stu extends Component {
                 </Topnav>
                 <div className={style.nav}>
                     <ul>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
-                        <li>
-                            <img src={require('../../../images/1.png')} />
-                            <span>技巧百科</span>
-                        </li>
+                        {this.props.state.stu.nav.map((item, index) => {
+                            let legth = item.link.split("/");
+                            let path = legth[legth.length-1];
+                            return (
+                                <NavLink to={"/"+path} key={item.categoryItemId}>
+                                    <li>
+                                        <img src={item.image}/>
+                                        <span>{item.title}</span>
+                                    </li>
+                                </NavLink>
+                            )
+                        })}
                     </ul>
                 </div>
                 <div className={style.conent}>
@@ -36,53 +35,51 @@ class Stu extends Component {
                         <li>
                             <h2>推荐课程</h2>
                             <ul>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
-                                <li>
-                                    <img src={require('../../../images/fera.png')} />
-                                    <h3>3款卷不裂的蛋糕卷（黑糖红枣/紫芋椰香/香浓栗子）</h3>
-                                </li>
+                                {this.props.state.stu.commend.map((item, index) => {
+                                    return (
+                                        <li key={item.courseId}>
+                                            <div className={style.img_span}>
+                                                <img src={item.coverImage}/>
+                                                <span>{item.buyNum > "1000" ? "1000+" : item.buyNum}在学</span>
+                                            </div>
+                                            <h3>{item.coverTitle}</h3>
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </li>
+                        {this.props.state.stu.cetcommend.map((item, index) => {
+                            return (
+                                <li key={item.categoryId}>
+                                    <h2>{item.title}</h2>
+                                    <ul>
+                                        {item.item.map((item, index) => {
+                                            return (
+                                                <li key={item.categoryItemId} title={item.shareDescription}>
+                                                    <div className={style.img_span}>
+                                                        <img src={item.image}/>
+                                                        <span>{item.buyNum > "1000" ? "1000+" : item.buyNum}在学</span>
+                                                    </div>
+                                                    <h3>{item.shareTitle}</h3>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
             </div>
         );
     }
+
+    componentWillMount() {
+        this.props.getstu()
+        this.props.getcommend()
+        this.props.getcourse()
+
+    }
 }
 
-export default Stu;
+export default connect(state => ({state: state}), {getstu, getcommend, getcourse})(Stu)
