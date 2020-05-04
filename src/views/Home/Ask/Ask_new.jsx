@@ -1,398 +1,44 @@
 import React, {Component} from 'react';
-import ask from '../../../style/home/ask.module.scss'
-export default class Ask_new extends Component {
+import ask from '../../../style/home/ask/ask.module.scss'
+import {getNews} from "../../../store/actioin/ask";
+import {connect} from "react-redux";
+ class Ask_new extends Component {
     render() {
         return (
             <div className={ask.main}>
-                <div className={ask.article}>
-                    <a href="#">标题标题标题标题标题标题标题标题标题</a>
-                    <div className={ask.content}>
-                        <img
-                            src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'}
-                            alt=""/>
-                        <div className={ask.cont}>
-                            <p className={ask.cont_title}>标题标题标题标题标题标题标题标题</p>
-                            <p className={ask.author}>作者：某某某</p>
+                {this.props.state.ask.news.map((item,index)=>{
+                    // console.log(this.props.state)
+                    return(
+                        <div className={ask.article} key={index}>
+                            <a href={`/question/${item.contentId}?clientId=${item.clientId}`}>{item.coverTitle}</a>
+                            <div className={ask.content}>
+                                <img
+                                    src={item.recipe.image}
+                                    alt=""/>
+                                <div className={ask.cont}>
+                                    <p className={ask.cont_title}>{item.recipe.title}</p>
+                                    <p className={ask.author} style={item.recipeStepNums>0 ? {color: '#FF8A6D'}:{}}>{(item.recipeStepNums>0?`在第${item.recipeStepNums}个步骤提问`:`作者：${item.recipe.clientName}`)}</p>
+                                </div>
+                            </div>
+                            <div className={ask.go_answers}>
+                                <div className={ask.img}>
+                                    <img
+                                        src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'}
+                                        alt=""/>
+                                </div>
+                                <div className={ask.write}>写答案</div>
+                            </div>
+                            <div className={item.answerNum>0 ? ask.the_answers : [`${ask.the_answers}`, `${ask.none}`].join(' ')}>
+                                {item.answerNum>0 ? `${item.answerNum}个回答` : '暂无回答'}
+                            </div>
                         </div>
-                    </div>
-                    <div className={ask.go_answers}>
-                        <div className={ask.img}>
-                            <img
-                                src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'}
-                                alt=""/>
-                        </div>
-                        <div className={ask.write}>写答案</div>
-                    </div>
-                    <div className={[`${ask.the_answers}`, `${ask.none}`].join(' ')}>
-                        暂无回答
-                    </div>
-                </div>
-                <div className={ask.article}>
-                    <a href="#">标题标题标题标题标题标题标题标题标题</a>
-                    <div className={ask.content}>
-                        <img
-                            src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'}
-                            alt=""/>
-                        <div className={ask.cont}>
-                            <p className={ask.cont_title}>标题标题标题标题标题标题标题标题</p>
-                            <p className={ask.author}>作者：某某某</p>
-                        </div>
-                    </div>
-                    <div className={ask.go_answers}>
-                        <div className={ask.img}>
-                            <img
-                                src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'}
-                                alt=""/>
-                        </div>
-                        <div className={ask.write}>写答案</div>
-                    </div>
-                    <div className={ask.the_answers}>
-                        100个回答
-                    </div>
-                </div>
-                <div className={ask.article}>
-                    <a href="#">标题标题标题标题标题标题标题标题标题</a>
-                    <div className={ask.content}>
-                        <img
-                            src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'}
-                            alt=""/>
-                        <div className={ask.cont}>
-                            <p className={ask.cont_title}>标题标题标题标题标题标题标题标题</p>
-                            <p className={ask.author}>作者：某某某</p>
-                        </div>
-                    </div>
-                    <div className={ask.go_answers}>
-                        <div className={ask.img}>
-                            <img
-                                src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'}
-                                alt=""/>
-                        </div>
-                        <div className={ask.write}>写答案</div>
-                    </div>
-                    <div className={[`${ask.the_answers}`, `${ask.none}`].join(' ')}>
-                        暂无回答
-                    </div>
-                </div>
-                <div className={ask.article}>
-                    <a href="#">标题标题标题标题标题标题标题标题标题</a>
-                    <div className={ask.content}>
-                        <img
-                            src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'}
-                            alt=""/>
-                        <div className={ask.cont}>
-                            <p className={ask.cont_title}>标题标题标题标题标题标题标题标题</p>
-                            <p className={ask.author}>作者：某某某</p>
-                        </div>
-                    </div>
-                    <div className={ask.go_answers}>
-                        <div className={ask.img}>
-                            <img
-                                src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'}
-                                alt=""/>
-                        </div>
-                        <div className={ask.write}>写答案</div>
-                    </div>
-                    <div className={ask.the_answers}>
-                        100个回答
-                    </div>
-                </div>
-                <div className={ask.article}>
-                    <a href="#">标题标题标题标题标题标题标题标题标题</a>
-                    <div className={ask.content}>
-                        <img
-                            src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'}
-                            alt=""/>
-                        <div className={ask.cont}>
-                            <p className={ask.cont_title}>标题标题标题标题标题标题标题标题</p>
-                            <p className={ask.author}>作者：某某某</p>
-                        </div>
-                    </div>
-                    <div className={ask.go_answers}>
-                        <div className={ask.img}>
-                            <img
-                                src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'}
-                                alt=""/>
-                        </div>
-                        <div className={ask.write}>写答案</div>
-                    </div>
-                    <div className={ask.the_answers}>
-                        100个回答
-                    </div>
-                </div>
+                    )
+                })}
             </div>
         );
     }
+    componentWillMount() {
+        this.props.getNews()
+    }
 }
-
-
-// <div className={'ask'}>
-//     <div className={'title'}>
-//         <div className={'title-t'}>
-//                         <span className={'questions'}>
-//                         提问
-//                     </span>
-//             <span className={'answers'}>
-//                         <img src={'https://image.hongbeibang.com/FjmYGE5z6RvQL-_fdLKuSGYfmwO2?48X48&imageView2/1/w/48/h/48'} alt=""/>
-//                     </span>
-//             <div className={'search'}>
-//                 <div className={'input'}>
-//                     <span>搜索问题</span>
-//                 </div>
-//             </div>
-//         </div>
-//         <div className={'title-b'}>
-//             <div className={'nav'}>
-//                 <span>精华问答</span>
-//                 <div className={'line'}>
-//
-//                 </div>
-//             </div>
-//             <div className={'nav active'}>
-//                 <span>最新问题</span>
-//                 <div className={'line'}>
-//
-//                 </div>
-//             </div>
-//             <div className={'nav'}>
-//                 <span>最热问题</span>
-//                 <div className={'line'}>
-//
-//                 </div>
-//             </div>
-//         </div>
-//     </div>
-//     <div className={'top'}>
-//     </div>
-//     <div id={'main'}>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers none'}>
-//                 暂无回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-//         <div className={'article'}>
-//             <a href="#">标题标题标题标题标题标题标题标题标题</a>
-//             <div className={'content'}>
-//                 <img src={'https://image.hongbeibang.com/FhcfA6Gg3Fb9D6hqjkffuXahH3Wg?1080X810&imageView2/1/w/70/h/70'} alt=""/>
-//                 <div className={'cont'}>
-//                     <p className={'cont-title'}>标题标题标题标题标题标题标题标题</p>
-//                     <p className={'author'}>作者：某某某</p>
-//                 </div>
-//             </div>
-//             <div className={'go-answers'}>
-//                 <div className={'img'}>
-//                     <img src={'https://image.hongbeibang.com/FlSZI5KwZLrR9-QXD9Vu7u0lVvCE?48X48&imageView2/1/w/40/h/40'} alt=""/>
-//                 </div>
-//                 <div className={'write'}>写答案</div>
-//             </div>
-//             <div className={'the-answers'}>
-//                 100个回答
-//             </div>
-//         </div>
-{/*    </div>*/
-}
-{/*</div>*/
-}
+export default connect(state => ({state: state}), {getNews})(Ask_new)
