@@ -8,6 +8,7 @@ class Topnav extends Component {
 
     render() {
         let top_left,top_rigth,top_conent,button;
+        console.log(this.props.children)
         this.props.children.forEach((item, index) => {
             switch (item.props.position) {
                 case "top_left":
