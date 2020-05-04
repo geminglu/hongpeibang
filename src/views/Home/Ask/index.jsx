@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import style from '../../../style/home/ask.module.scss'
-import ask from "../../../style/home/ask.module.scss";
+import style from '../../../style/home/ask/ask.module.scss'
+import ask from "../../../style/home/ask/ask.module.scss";
 import {NavLink, Redirect, Route, Switch} from "react-router-dom";
 import AskQuintessence from "./Ask_quintessence";
 import Ask_new from "./Ask_new";
@@ -16,21 +16,21 @@ class Ask extends Component {
                         <div position="top_left">
                             <span className={ask.questions}>提问</span>
                         </div>
-                        <div position="top_conent">
+                        <div position="top_center">
                             <div className={ask.search}>
                                 <div className={ask.input}>
                                     <span>搜索问题</span>
                                 </div>
                             </div>
                         </div>
-                        <div position="top_rigth">
+                        <div position="top_right">
                             <span className={ask.answers}>
                                 <img
                                     src={require('../../../images/question.png')}
                                     alt=""/>
                             </span>
                         </div>
-                        <div position="button">
+                        <div position="bottom">
                             <div className={style.nav}>
                                 <NavLink className={style.nav1} activeClassName={style.active} to={'/ask/essence'}>
                                     <span>精华问答</span>

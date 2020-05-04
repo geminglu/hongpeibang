@@ -17,6 +17,7 @@ class Circle extends Component {
       <div>
         <Topnav>
           <div position="top_left">左</div>
+<<<<<<< HEAD
           <div position="top_rigth">右</div>
           <div position="top_conent">
             <NavLink
@@ -33,6 +34,10 @@ class Circle extends Component {
               达人
             </NavLink>
           </div>
+=======
+          <div position="top_right">右</div>
+          <div position="top_center">中</div>
+>>>>>>> cc0e87a4940a517da57f6b3b865c6a919dee2557
         </Topnav>
         <Route path={"/circle/"} exact component={New}></Route>
         <Route path={"/circle/expert"}  component={Expert}></Route>

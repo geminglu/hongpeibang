@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {connect} from 'react-redux'
 //引入scss样式
 import style from "./../../../style/home/circle/new.module.scss";
 
