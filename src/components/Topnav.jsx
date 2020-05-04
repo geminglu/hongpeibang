@@ -7,7 +7,12 @@ class Topnav extends Component {
     }
 
     render() {
+<<<<<<< HEAD
+        let top_left,top_rigth,top_conent,button;
+        console.log(this.props.children)
+=======
         let top_left,top_right,top_center,bottom;
+>>>>>>> cc0e87a4940a517da57f6b3b865c6a919dee2557
         this.props.children.forEach((item, index) => {
             // console.log(item.props.children)
             // console.log(item.props)
