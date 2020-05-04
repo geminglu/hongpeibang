@@ -1,22 +1,27 @@
 .newup {
   margin-top: 44px;
+
   ul {
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
     width: 100%;
+    padding: 5px 0 10px;
     li {
       img {
+        margin-left: 5px;
         width: 150px;
         height: 85.5px;
+        border-radius: 5px;
       }
     }
   }
 }
+//中间部分
 .newin {
   ul {
     display: flex;
-    padding-left: 7px;
+
     overflow-y: hidden;
     overflow-x: scroll;
     li {
@@ -27,8 +32,155 @@
       white-space: nowrap;
       background: #0000ff;
       color: #ffffff;
-      margin-left: 10px;
+      margin: 10px 0 10px 5px;
       border-radius: 5px;
     }
+  }
+}
+// 主题部分
+.newmain {
+  margin-bottom: 50px;
+  ul {
+    li {
+      .newmain1 {
+        display: inline-block;
+        margin: 10px 15px;
+      }
+      .newmain1l {
+        display: inline-block;
+        margin: 10px 15px;
+        margin-right: 10px;
+        img {
+          margin-right: 10px;
+          border-radius: 50%;
+          overflow: hidden;
+          box-sizing: border-box;
+          border: 1px solid;
+          border-color: #e7e2e5;
+        }
+      }
+      .newmain1r {
+        vertical-align: middle;
+        display: inline-block;
+        p:first-child {
+          font-size: 13px;
+          height: 20px;
+          line-height: 20px;
+          text-align: left;
+          color: #4a4945;
+          overflow: hidden;
+        }
+        p:last-child {
+          text-align: left;
+          font-size: 12px;
+          height: 20px;
+          line-height: 20px;
+          color: #999999;
+          overflow: hidden;
+        }
+      }
+      .newmainc {
+        margin: 10px 15px 11px 15px;
+        font-size: 14px;
+        color: #4a4945;
+        line-height: 20px;
+        max-height: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .newmainm {
+        background: none;
+
+        overflow: hidden;
+      }
+      .newmainf {
+        display: block;
+        height: 30px;
+        box-sizing: border-box;
+        margin: 10px 15px 0 15px;
+        border-top: 1px solid #999999;
+        white-space:nowrap;
+        overflow: hidden;
+        span {
+          width: 33.33%;
+          font-size: 12px;
+          color: #999999;
+          margin-left: 5px;
+          vertical-align: middle;
+          display: inline-block;
+          border-right-color: #e7e2e5;
+          border-right: 1px solid;
+          text-align: center;
+          margin: 4px 0 0 0;
+         
+         
+        }
+      }
+    }
+    // li:first-child {
+    //   display: inline-block;
+    //   margin: 10px 15px;
+    //   div {
+    //     vertical-align: middle;
+    //     display: inline-block;
+    //     img {
+    //       margin-right: 10px;
+    //       border-radius: 50%;
+    //       overflow: hidden;
+    //       box-sizing: border-box;
+    //       border: 1px solid;
+    //       border-color: #e7e2e5;
+    //     }
+
+    //     p:first-child{
+
+    //       font-size: 13px;
+    //       height: 20px;
+    //       line-height: 20px;
+    //       text-align: left;
+    //       color: #4A4945;
+    //       overflow: hidden;
+    //     }
+    //     p:last-child{
+    //       text-align: left;
+    //       font-size: 12px;
+    //       height: 20px;
+    //       line-height: 20px;
+    //       color: #999999;
+    //       overflow: hidden;
+    //     }
+    //   }
+    // }
+    // li:nth-child(2) {
+    //   margin: 10px 15px 11px 15px;
+    //   font-size: 14px;
+    //   color: #4a4945;
+    //   line-height: 20px;
+    //   max-height: 80px;
+    //   overflow: hidden;
+    //   text-overflow: ellipsis;
+    // }
+    // li:nth-child(3) {
+    //   img {
+    //     background: none;
+    //     width: 219px;
+    //     height: 292px;
+    //     overflow: hidden;
+    //   }
+    // }
+    // li:last-child {
+
+    //   height: 30px;
+    //   box-sizing: border-box;
+    //   margin: 10px 15px 0 15px;
+    //   border-top: 1px solid #999999;
+    // }
+    // span {
+    //   font-size: 12px;
+    //   color: #999999;
+    //   margin-left: 5px;
+    //   vertical-align: middle;
+    //   display: inline-block;
+    // }
   }
 }
