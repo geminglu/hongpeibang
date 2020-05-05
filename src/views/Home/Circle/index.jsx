@@ -18,31 +18,24 @@ class Circle extends Component {
         <Topnav>
           <div position="top_left">左</div>
           <div position="top_right">右</div>
-          <div position="top_center">中</div>
-
-          {/* <<<<<<< HEAD
-          <div position="top_rigth">右</div>
-          <div position="top_conent">
+          <div position="top_center">
             <NavLink
               to={"/circle/attention"}
               exact
               activeClassName={style.active}
             >
-              关注
+              <span>关注</span>
             </NavLink>
             <NavLink to={"/circle"} exact activeClassName={style.active}>
-              最新
+              <span>最新</span>
             </NavLink>
-            <NavLink to={"/circle/expert"}  activeClassName={style.active}>
-              达人
+            <NavLink to={"/circle/expert"} exact activeClassName={style.active}>
+              <span>达人</span>
             </NavLink>
-          </div> */}
-
-
-
+          </div>
         </Topnav>
         <Route path={"/circle/"} exact component={New}></Route>
-        <Route path={"/circle/expert"}  component={Expert}></Route>
+        <Route path={"/circle/expert/"} exact component={Expert}></Route>
         <Route path={"/circle/attention"} exact component={Attention}></Route>
       </div>
     );
