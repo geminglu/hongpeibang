@@ -19,7 +19,7 @@ class Topnav extends Component {
                 case "top_center":
                     top_center = item.props.children
                     break;
-                case "bottom":
+                case "button":
                     button = item.props.children
                     break;
             }
@@ -28,7 +28,7 @@ class Topnav extends Component {
             <div className={style.warp}>
                 <div className={style.top}>
                     <div className={style.top_left}>{top_left}</div>
-                    <div className={style.top_center}>{top_right}</div>
+                    <div className={style.top_center}>{top_center}</div>
                     <div className={style.top_right}>{top_right}</div>
                 </div>
                 <div className={style.button}>{button}</div>
