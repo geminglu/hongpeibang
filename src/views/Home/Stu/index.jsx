@@ -4,6 +4,7 @@ import Topnav from '../../../components/Topnav'
 import {connect} from 'react-redux'
 import {NavLink} from "react-router-dom";
 import {getstu, getcommend, getcourse} from '../../../store/actioin/stu'
+import Course from "../../../components/Course";
 
 class Stu extends Component {
     render() {
@@ -18,9 +19,9 @@ class Stu extends Component {
                     <ul>
                         {this.props.state.stu.nav.map((item, index) => {
                             let legth = item.link.split("/");
-                            let path = legth[legth.length-1];
+                            let path = legth[legth.length - 1];
                             return (
-                                <NavLink to={"/"+path} key={item.categoryItemId}>
+                                <NavLink to={"/" + path} key={item.categoryItemId}>
                                     <li>
                                         <img src={item.image}/>
                                         <span>{item.title}</span>
@@ -32,22 +33,7 @@ class Stu extends Component {
                 </div>
                 <div className={style.conent}>
                     <ul>
-                        <li>
-                            <h2>推荐课程</h2>
-                            <ul>
-                                {this.props.state.stu.commend.map((item, index) => {
-                                    return (
-                                        <li key={item.courseId}>
-                                            <div className={style.img_span}>
-                                                <img src={item.coverImage}/>
-                                                <span>{item.buyNum > "1000" ? "1000+" : item.buyNum}在学</span>
-                                            </div>
-                                            <h3>{item.coverTitle}</h3>
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </li>
+                        <Course></Course>
                         {this.props.state.stu.cetcommend.map((item, index) => {
                             return (
                                 <li key={item.categoryId}>
@@ -55,13 +41,15 @@ class Stu extends Component {
                                     <ul>
                                         {item.item.map((item, index) => {
                                             return (
-                                                <li key={item.categoryItemId} title={item.shareDescription}>
-                                                    <div className={style.img_span}>
-                                                        <img src={item.image}/>
-                                                        <span>{item.buyNum > "1000" ? "1000+" : item.buyNum}在学</span>
-                                                    </div>
-                                                    <h3>{item.shareTitle}</h3>
-                                                </li>
+                                                <NavLink to={"/lesson/"+item.courseId} >
+                                                    <li key={item.categoryItemId} title={item.shareDescription}>
+                                                        <div className={style.img_span}>
+                                                            <img src={item.image}/>
+                                                            <span>{item.buyNum > "1000" ? "1000+" : item.buyNum}在学</span>
+                                                        </div>
+                                                        <h3>{item.shareTitle}</h3>
+                                                    </li>
+                                                </NavLink>
                                             )
                                         })}
                                     </ul>
@@ -77,9 +65,8 @@ class Stu extends Component {
     componentWillMount() {
         this.props.getstu()
         this.props.getcommend()
-        this.props.getcourse()
 
     }
 }
 
-export default connect(state => ({state: state}), {getstu, getcommend, getcourse})(Stu)
+export default connect(state => ({state: state}), {getstu, getcommend})(Stu)

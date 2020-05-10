@@ -7,6 +7,7 @@ import Circle from './Circle'
 import style from '../../style/home/index.module.scss'
 import {connect} from 'react-redux'
 import {addGoods, getGoods} from '../../store/actioin/goods'
+import "lib-flexible"
 
 class Home extends Component {
     render() {

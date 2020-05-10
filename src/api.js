@@ -4,7 +4,7 @@ import QS from 'qs'
 /**
  * 设置超时时间和跨域是否允许携带凭证
  */
-axios.defaults.timeout = 10000;
+axios.defaults.timeout = 1000000;
 axios.defaults.withCredentials = true;
 
 // 设置post请求头

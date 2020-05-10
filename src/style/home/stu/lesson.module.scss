@@ -1,0 +1,67 @@
+.video {
+  height: 336px;
+  background: #999999;
+}
+.top{
+  padding-top: 19.2px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  background-color: #fff;
+  .title {
+    font-weight: bold;
+    font-size: 32px;
+    color: #313131;
+  }
+  .inpen{
+    margin-top: 24px;
+    display: flex;
+    font-size: 22px;
+    color: #313131;
+    justify-content: space-between;
+    .sss{
+      color: #E98B71;
+    }
+    img{
+      width: 43px;
+    }
+    .span{
+      font-size: 20px;
+      color: #E98B71;
+      background: url("../../../images/bf.png") no-repeat;
+      background-size: 30px;
+      background-position-x: 5px;
+      padding: 8px 0;
+      padding-left: 40px;
+      padding-right: 5px;
+      border: 1px solid #E98B71;
+      border-radius: 4px;
+      background-position-y: 50%;
+    }
+  }
+}
+
+.conetn{
+  margin-top: 16px;
+  background: white;
+  padding: 32px;
+  ul li{
+    border: 1px black solid;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    padding: 30px;
+  }
+  span{
+    font-size: 26px !important;
+    margin-bottom: 26px !important;
+    display: block;
+  }
+  .ctitle{
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 24px;
+    color: #313131;
+    margin-bottom: 10px;
+  }
+}
